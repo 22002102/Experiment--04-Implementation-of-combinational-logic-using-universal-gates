@@ -29,15 +29,54 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 ## Logic Diagram
 ## Procedure
 ## Program:
+```
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: SANJAY S
+RegisterNumber: 212222230132 
+module cpmbine(a,b,c,d,f);
+input a,b,c,d;
+output f;
+wire p,q,r;
+assign p=(~c & b & a);
+assign q=(~d & c & c & a);
+assign r=(c & ~b & a);
+assign f=(~(~p & ~q & ~r));
+endmodule
+
+module combine1(a,b,c,d,f);
+input a,b,c,d;
+output f;
+wire p,q,r;
+assign p=(c & ~b & a);
+assign q=(d & ~c & a);
+assign r=(c & ~b & a);
+assign f=((p | q & |r));
+endmodule
+```
 */
 ## RTL realization
 
 ## Output:
+
+
+
+
 ## RTL
+![image](https://user-images.githubusercontent.com/119091638/234600254-ac869e86-a035-4b10-b872-398bab727dbf.png)
+
+
+![image](https://user-images.githubusercontent.com/119091638/234600447-7f7f8eef-db05-497e-9068-f478ca636550.png)
+
 ## Timing Diagram
+
+![image](https://user-images.githubusercontent.com/119091638/234600769-3638f023-b36d-474a-8715-c27339e747bd.png)
+
+
+![image](https://user-images.githubusercontent.com/119091638/234600892-b1675c60-11c0-4af9-9569-77a982af3702.png)
+
+
+
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.

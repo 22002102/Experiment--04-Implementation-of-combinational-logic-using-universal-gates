@@ -28,31 +28,40 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 ## Logic Diagram
 ## Procedure
+1.Create a project with required entities. 
+2.Create a module along with respective file name.
+3.Run the respective programs for the given boolean equations. 
+4.Run the module and get the respective RTL outputs.
+5.Create university program(VWF) for getting timing diagram. 
+6.Give the respective inputs for timing diagram and obtain the results.
 ## Program:
 ```
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
 Developed by: SANJAY S
 RegisterNumber: 212222230132 
-module cpmbine(a,b,c,d,f);
-input a,b,c,d;
-output f;
-wire p,q,r;
-assign p=(~c & b & a);
-assign q=(~d & c & c & a);
-assign r=(c & ~b & a);
-assign f=(~(~p & ~q & ~r));
+module verilog1(a,b,c,d,w,x,y,z,F1,F2);
+input a,b,c,d,w,x,y,z;
+output F1,F2;
+wire  A1,A2,A3,A4,A5,B1,B2,B3,B4,B5;
+assign A1= (~a&(~b)&(~c)&(~d));
+assign A2= (a&c&(~d));
+assign A3= ((~b)&c&(~d));
+assign A4= (~a&b&c&d);
+assign A5= (b&(~c)&d);
+assign F1= A1|A2|A3|A4|A5;
+assign B1= (x&(~y)&z);
+assign B2= (~x&(~y)&z);
+assign B3= (~w&x&y);
+assign B4= (w&(~x)&y);
+assign B5= (w&y&z);
+assign F2= B1|B2|B3|B4|B5;
 endmodule
 
-module combine1(a,b,c,d,f);
-input a,b,c,d;
-output f;
-wire p,q,r;
-assign p=(c & ~b & a);
-assign q=(d & ~c & a);
-assign r=(c & ~b & a);
-assign f=((p | q & |r));
-endmodule
+
+
+
+
 ```
 */
 ## RTL realization
@@ -63,17 +72,15 @@ endmodule
 
 
 ## RTL
-![image](https://user-images.githubusercontent.com/119091638/234600254-ac869e86-a035-4b10-b872-398bab727dbf.png)
+![image](https://github.com/22002102/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/119091638/244a2155-780b-4585-b93b-a68e04b3460d)
 
-
-![image](https://user-images.githubusercontent.com/119091638/234600447-7f7f8eef-db05-497e-9068-f478ca636550.png)
 
 ## Timing Diagram
 
-![image](https://user-images.githubusercontent.com/119091638/234600769-3638f023-b36d-474a-8715-c27339e747bd.png)
+![image](https://github.com/22002102/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/119091638/cce9d991-6f21-4888-912f-d52184e17d71)
 
-
-![image](https://user-images.githubusercontent.com/119091638/234600892-b1675c60-11c0-4af9-9569-77a982af3702.png)
+## Truth table:
+![image](https://github.com/22002102/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/119091638/7ee9403a-7f02-45f8-a702-08dff4a88c06)
 
 
 
